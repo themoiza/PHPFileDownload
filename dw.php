@@ -41,7 +41,7 @@ if($login === true){
 		header('Content-disposition: '.$disposition.'; filename="'.$file.'"');
 
 		// BUFFER, DON'T readfile(), READFILE CAN USE ALL MEMORY CONFIG in php.ini
-		$fd = fopen ($file, 'rb');
+		$fd = fopen ($location.'/'. $file, 'rb');
 		while(!feof($fd)) {
 			$buffer = fread($fd, 2048);
 			echo $buffer;
